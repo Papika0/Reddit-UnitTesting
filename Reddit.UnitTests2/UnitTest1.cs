@@ -96,3 +96,16 @@ public class PostsRepositoryTests
         Assert.Equal("pageSize", exception.ParamName);
     }
 }
+public static class FakeDataGenerator
+{
+    public static List<T> GenerateFakeData<T>(int count) where T : new()
+    {
+        var list = new List<T>();
+        for (int i = 0; i < count; i++)
+        {
+            list.Add(new T());
+        }
+        return list;
+    }
+}
+
